@@ -5,7 +5,6 @@ import urllib.request
 
 import numpy as np
 import torch
-from scipy.special import softmax
 from transformers import AutoModelForSequenceClassification
 from transformers import AutoTokenizer
 
@@ -44,7 +43,6 @@ def classify(model, tokenizer, text):
     with torch.no_grad():
         output = model(**encoded_input)
     scores = output[0][0].detach().cpu().numpy()
-    scores = softmax(scores)
     return scores
 
 
