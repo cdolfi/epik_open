@@ -1,7 +1,10 @@
 import csv
+import os
+import shutil
 import urllib.request
 
 import numpy as np
+import torch
 from scipy.special import softmax
 from transformers import AutoModelForSequenceClassification
 from transformers import AutoTokenizer
@@ -20,7 +23,10 @@ def preprocess(text):
 
 def get_model(task='sentiment'):
     model_name = f"cardiffnlp/twitter-roberta-base-{task}"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    # TODO: find more elegant solution for tokenizer bug
+    if os.path.exists(model_name):
+        shutil.rmtree(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, force_download=True)
     mapping_link = f"https://raw.githubusercontent.com/cardiffnlp/tweeteval/main/datasets/{task}/mapping.txt"
     with urllib.request.urlopen(mapping_link) as f:
         html = f.read().decode('utf-8').split("\n")
@@ -34,9 +40,10 @@ def get_model(task='sentiment'):
 
 def classify(model, tokenizer, text):
     text = preprocess(text)
-    encoded_input = tokenizer(text, return_tensors='pt')
-    output = model(**encoded_input)
-    scores = output[0][0].detach().numpy()
+    encoded_input = tokenizer(text, return_tensors='pt').to(model.device)
+    with torch.no_grad():
+        output = model(**encoded_input)
+    scores = output[0][0].detach().cpu().numpy()
     scores = softmax(scores)
     return scores
 
@@ -44,6 +51,8 @@ def classify(model, tokenizer, text):
 class TwitterRobertaBase:
     def __init__(self, task):
         self.model, self.tokenizer, self._labels = get_model(task)
+        if torch.cuda.is_available():
+            self.model.to('cuda')
 
     def classify_scores(self, text):
         return classify(self.model, self.tokenizer, text)
