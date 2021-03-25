@@ -1,1 +1,2 @@
-from .twitter_roberta import TwitterSentimentClassification, TwitterEmotionClassification
+from .t5_emotion import T5EmotionClassifier
+from .twitter_roberta import TwitterSentimentClassifier, TwitterEmotionClassifier

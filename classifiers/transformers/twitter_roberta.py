@@ -65,11 +65,11 @@ class TwitterRobertaBase:
         return self._labels
 
 
-class TwitterEmotionClassification(TwitterRobertaBase, EmotionClassifier):
+class TwitterEmotionClassifier(TwitterRobertaBase, EmotionClassifier):
     def __init__(self):
         super().__init__('emotion')
 
 
-class TwitterSentimentClassification(TwitterRobertaBase, SentimentClassifier):
+class TwitterSentimentClassifier(TwitterRobertaBase, SentimentClassifier):
     def __init__(self):
         super().__init__('sentiment')
