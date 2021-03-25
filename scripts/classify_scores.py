@@ -7,7 +7,7 @@ import classifiers
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', required=True, choices=['twitter-roberta', 't5'])
+    parser.add_argument('--model', required=True, choices=['twitter-roberta', 't5', 'goemotion-bert'])
     parser.add_argument('--task', required=True, choices=['emotion', 'sentiment'])
     parser.add_argument('--eval-data', type=str, default='../data/evaluation_volunteer_text_1000.csv',
                         help='csv data to load. must have text column')
@@ -25,6 +25,9 @@ def get_classifier(args) -> classifiers.Classifier:
     if args.model == 't5':
         if args.task == 'emotion':
             return classifiers.T5EmotionClassifier()
+    if args.model == 'goemotion-bert':
+        if args.task == 'emotion':
+            return classifiers.GoEmotionBertClassifier()
     raise Exception(f'Combination {args.model} and {args.task} not available')
 
 
