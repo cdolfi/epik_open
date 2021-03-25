@@ -1,9 +1,12 @@
 import csv
 import urllib.request
 
+import numpy as np
 from scipy.special import softmax
 from transformers import AutoModelForSequenceClassification
 from transformers import AutoTokenizer
+
+from classifiers.classifiers import EmotionClassifier, SentimentClassifier
 
 
 def preprocess(text):
@@ -36,3 +39,30 @@ def classify(model, tokenizer, text):
     scores = output[0][0].detach().numpy()
     scores = softmax(scores)
     return scores
+
+
+class TwitterRobertaBase:
+    def __init__(self, task):
+        self.model, self.tokenizer, self._labels = get_model(task)
+
+    def classify_scores(self, text):
+        return classify(self.model, self.tokenizer, text)
+
+    def classify(self, text):
+        scores = self.classify_scores(text)
+        pred = np.argmax(scores)
+        return pred
+
+    @property
+    def labels(self):
+        return self._labels
+
+
+class TwitterEmotionClassification(TwitterRobertaBase, EmotionClassifier):
+    def __init__(self):
+        super().__init__('emotion')
+
+
+class TwitterSentimentClassification(TwitterRobertaBase, SentimentClassifier):
+    def __init__(self):
+        super().__init__('sentiment')
