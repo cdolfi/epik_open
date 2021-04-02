@@ -1,2 +1,7 @@
-# epik-project-nlp
-Analyzing buyer and seller SMS messages for The EPIK Project.
+# EPIK Project SMS Sentiment Analysis
+
+## Installation
+
+```
+pip install -r requirements.txt
+```
