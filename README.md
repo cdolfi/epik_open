@@ -22,7 +22,7 @@ To run jupyter, run `jupyter notebook` and follow the printed instruction to lau
 
 We have some python scripts in this repository that can be run.
 First, you need to set your `PYTHONPATH` environment variable to this directory.
-On Linux, you can do so with `export PYTHONPATH=PYTHONPATH:$(pwd)`. 
+On Linux, you can do so with `export PYTHONPATH=$PYTHONPATH:$(pwd)`. 
 On Windows, `set "PYTHONPATH=%PYTHONPATH%;%cd%"`.
 
 You can find python scripts in the `scripts` folder.  
