@@ -7,6 +7,9 @@ Then you can run the following command to install all python requirements for th
 ```
 pip install -r requirements.txt
 ```
+If you have a GPU, you should follow the 
+[official pytorch installation instructions](https://pytorch.org/get-started/locally/)
+and `pip install` each requirement individually.
 
 ## Running Code
 
@@ -22,7 +25,7 @@ First, you need to set your `PYTHONPATH` environment variable to this directory.
 On Linux, you can do so with `export PYTHONPATH=PYTHONPATH:$(pwd)`. 
 On Windows, `set "PYTHONPATH=%PYTHONPATH%;%cd%"`.
 
-You can find python scripts in the `scripts` folder.
+You can find python scripts in the `scripts` folder.  
 For example, to use GoEmotionBert to classify texts, you can run 
 ```
 python scripts/classify_scores.py --model=goemotion-bert --task=emotion --eval-data=data/evaluation_volunteer_text_1000.csv --save-path=data/test.csv
