@@ -31,7 +31,7 @@ For example, to use GoEmotionBert to classify texts, you can run
 python scripts/classify_scores.py --model=goemotion-bert --task=emotion --eval-data=data/evaluation_volunteer_text_1000.csv --save-path=data/test.csv
 ```
 
-### Docker Instructions
+## Docker Instructions
 
 We recommend running the scripts and notebooks using Docker.
 First, open a terminal window and navigate to the project directory.
