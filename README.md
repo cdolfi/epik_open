@@ -35,7 +35,7 @@ python scripts/classify_scores.py --model=goemotion-bert --task=emotion --eval-d
 
 We recommend running the scripts and notebooks using Docker.
 First, open a terminal window and navigate to the project directory.
-From there, you need to build the Docker image by running ```docker build -t epikproj .```
+From there, you need to build the Docker image by running ```docker build -t epikproj .```.
 
-Then you can run the image as a Docker container by executing ```docker run -it epikproj bash```
-This will allow you to access the container in the interactive mode so you can run the files and notebooks as you normally would.
+Then you can run the image as a Docker container by executing ```docker run -it epikproj bash```.
+This will allow you to access the container in the interactive mode so you can run the scripts and notebooks by using the instructions above.
