@@ -72,7 +72,7 @@ EPIK is a nonprofit working to mobilize male allies in disrupting the commercial
 
 With EPIK's recent shift in approach from scripted to unscripted volunteer conversations, in addition to their longtime policy of a non shaming approach to buyers, the organization needed some research into their methods to determine efficiency. This tool provides the necessary feedback on their methods by conducting analysis on the communication style of the volunteers and the conversation between volunteers and buyers as a whole.
 
-# 6. Goal
+# 6. Project Scope
 
 ## 6.1. Current State
 
@@ -96,7 +96,7 @@ CSV file with a column for text labeled "text"
 The data was cleaned at multiple different points. First the data was [Cleaned](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/cleaning.ipynb)
 to organize the entire data set by conversation. From there, each conversation is in chronological order of when the messages where sent. After this, all of the null text messages where removed from the dataset as well. 
 
-From the calender data we received from Justin, we labeled each conversation thread with which unit was on call during the time of the conversation [conversation](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/cleaned_patrols.csv).
+From the calender data we received from Justin, we labeled each conversation thread with which unit was on call during the time of the [conversation](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/cleaned_patrols.csv).
 
 Once we got the labeled data from Justin, we also cleaned the labels to be set up to go into our [models](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/labeled_data.ipynb). At this point we made each label consistent throughout in terms of spelling and capitalization. 
 
@@ -111,49 +111,64 @@ Finally, we went through the resulting data and analyzed the general sentiment o
 
 # 9. Dataset and Sample Results
 In our data folder, we have the following data sets avalible:
--[sorted_new.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/sorted_new.csv) - Dataset with all entries from Epik_2019A-Epik_2021A organized by conversation 
--[cleaned_patrols.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/cleaned_patrols.csv) - the sorted_new data set with the patrol data appended 
--[evaluation_volunteer_text_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/evaluation_volunteer_text_1000.csv) - the random 1000 entries from sorted_new used to test each of our potential model options
--[t5_emotion_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/t5_emotion_volunteer_1000.csv) - the output of t5 on the random 1000 entries used for testing
--[goemotion_bert_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/goemotion_bert_volunteer_1000.csv) - the output of goemotion on the random 1000 entries used for testing
--[twiter_roberta_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/twiter_roberta_volunteer_1000.csv) - the output of twitter rooberta on the random 1000 entries used for testing
--[watson_labeled.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/watson_labeled.csv) - the output of watson nlu on the random 1000 entries used for testing
--[labeled_data_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/labeled_data_1000.csv) - the cleaned and normalized version of justins responses of the random 1000 entries used for testing
--[feedback_goemotion.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/feedback_goemotion.csv) - the raw and uncleaned version of justins responses of the random 1000 entries used for testing
--[unique_messages.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/unique_messages.csv) - sorted_new with a column to identify if the text was from a script or not
+- [sorted_new.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/sorted_new.csv) - Dataset with all entries from Epik_2019A-Epik_2021A organized by conversation 
+
+- [patrol_data.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/patrol_data.csv) - the sorted_new data set with the patrol data appended 
+
+- [evaluation_volunteer_text_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/evaluation_volunteer_text_1000.csv) - the random 1000 entries from sorted_new used to test each of our potential model options
+
+- [t5_emotion_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/t5_emotion_volunteer_1000.csv) - the output of t5 on the random 1000 entries used for testing
+
+- [goemotion_bert_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/goemotion_bert_volunteer_1000.csv) - the output of goemotion on the random 1000 entries used for testing
+
+- [twiter_roberta_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/twiter_roberta_volunteer_1000.csv) - the output of twitter rooberta on the random 1000 entries used for testing
+
+- [watson_labeled.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/watson_labeled.csv) - the output of watson nlu on the random 1000 entries used for testing
+
+- [labeled_data_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/labeled_data_1000.csv) - the cleaned and normalized version of justins responses of the random 1000 entries used for testing
+
+- [feedback_goemotion.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/feedback_goemotion.csv) - the raw and uncleaned version of justins responses of the random 1000 entries used for testing
+
+- [unique_messages.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/unique_messages.csv) - sorted_new with a column to identify if the text was from a script or not
+
 -[test.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/test.csv) - sample output of our script 
 
 
 # 10. Alternative Methods Tried
 All the links to these tools will be provided in [11.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
+
 The decision to used go_emotion also was influence by the comparisons between models in [compare_models.ipynb](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/compare_models.ipynb)
 
 ## 10.1. Watson NLU 
 Watson NLU gave a rating value for each of the following emotions: joy, anger, sadness, fear, disgust, positive, negative, neutral. We decided not to use this tool for our final analysis for the following reasons: 
--it required longer text strings then many of the messages we were working with 
--less emotion coverage than goemotion 
--less accurate from our preliminary
+
+- it required longer text strings then many of the messages we were working with 
+- less emotion coverage than goemotion 
+- less accurate from our preliminary
 ## 10.2. NRCLex 
 NRCLex gave a rating value for each of the following emotions: joy, anger, sadness, fear, disgust, surprise, trust. We decided not to use this tool for our final analysis for the following reasons: 
--it required longer text strings then many of the messages we were working with 
--the frequency count made it confusing to use for analysis
--less accurate from our preliminary
+
+- it required longer text strings then many of the messages we were working with 
+- the frequency count made it confusing to use for analysis
+- less accurate from our preliminary
 ## 10.3. Roberta 
 Roberta gave a rating value for each of the following emotions: joy, anger, sadness, optimism. We decided not to use this tool for our final analysis for the following reasons: 
--it required longer text strings then many of the messages we were working with 
--the frequency count made it confusing to use for analysis
--less accurate from our preliminary
+
+- it required longer text strings then many of the messages we were working with 
+- the frequency count made it confusing to use for analysis
+- less accurate from our preliminary
 ## 10.4. T5
 T5 gave a rating value for each of the following emotions: joy, anger, sadness, fear, surprise, love, other. We decided not to use this tool for our final analysis for the following reasons: 
--it required longer text strings then many of the messages we were working with 
--the frequency count made it confusing to use for analysis
--less accurate from our preliminary
+
+- it required longer text strings then many of the messages we were working with 
+- the frequency count made it confusing to use for analysis
+- less accurate from our preliminary
 
 # 11. Extra Resources
 
 ## 11.1. EDA
 
-[eda](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
+[Eda](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
 
 [Sentiment EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda_sentiment.ipynb) - Exploratory analysis of roberta on the sample data set and analyzing the differences between volunteer and buyer text. 
 
