@@ -59,7 +59,8 @@ python scripts/classify_scores.py --model=goemotion-bert --task=emotion --eval-d
 
 # 3. Input File Requirements
 
-CSV file formatting...
+Input requirements to the script are as followed: 
+CSV file with a column for text labeled "text" 
 
 # 4. EPIK Project SMS Sentiment Analysis
 
@@ -75,41 +76,92 @@ With EPIK's recent shift in approach from scripted to unscripted volunteer conve
 
 ## 6.1. Current State
 
-scripts that can be run on conversation inputs and output informative stats on sentiment of conversations. Provide a general idea of how volunteers are doing.
-
+This tool currently relies on pre-trained models to provide the sentiment analysis on the conversations between volunteers and buyers. The analysis is run using scripts that take in csv files containing the SMS messages provided by EPIK. The scripts then analyze the sentiment results and output stats providing a general idea of how volunteers are doing.
 ## 6.2. Future
 
-Build a ML classifier specific for EPIK's needs.
+This tool currently relies on pre-trained models to provide the sentiment analysis on the conversations between volunteers and buyers. The analysis is run using scripts that take in csv files containing the SMS messages provided by EPIK. The scripts then analyze the sentiment results and output stats providing a general idea of how volunteers are doing.
+
 
 # 7. Big Overview of Tool
+
+The final output of our project will be the following: a script that will give an emotional rating of the emotions for go_emotion and rating of accountability from the labeled data from Justin. This tool will be used to compare ratings between scripted vs. unscripted, conversations (breaking down by volunteer and buyer as well), and by patrol unit. 
 
 # 8. The Pipeline
 
 ## 8.1. CSV Inputs, Outputs
+Input requirements to the script are as followed: 
+CSV file with a column for text labeled "text"
 
 ## 8.2. Cleaning Data
+The data was cleaned at multiple different points. First the data was [Cleaned](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/cleaning.ipynb)
+to organize the entire data set by conversation. From there, each conversation is in chronological order of when the messages where sent. After this, all of the null text messages where removed from the dataset as well. 
 
-## 8.3. Pre-trained Models
+From the calender data we received from Justin, we labeled each conversation thread with which unit was on call during the time of the conversation [conversation](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/cleaned_patrols.csv).
+
+Once we got the labeled data from Justin, we also cleaned the labels to be set up to go into our [models](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/labeled_data.ipynb). At this point we made each label consistent throughout in terms of spelling and capitalization. 
+
 
 ## 8.4. Analyzing/Categorizing Results
 
-analyzing most common sentiments, accuracy of sentiments, how well sentiments aligned with EPIK's 4 emotional dispositions
+The first step of analyzing the data was to run the pre-trained sentiment analysis model on the newly cleaned data. GoEmotion Bert, our pre-trained model of choice, returned the emotions detected within each individual message (from the 27 emotions + neutral labelled options they offered). 
+
+From the sentiment analysis, we then worked with Justin to add the label for "accountability", by working through a sample of 1000 rows of data to relabel texts Justin felt fulfilled the label "accountability'. 
+
+Finally, we went through the resulting data and analyzed the general sentiment of conversations as a whole, for the volunteer side of conversations, and for the buyer side of conversations.
 
 # 9. Dataset and Sample Results
+In our data folder, we have the following data sets avalible:
+-[sorted_new.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/sorted_new.csv) - Dataset with all entries from Epik_2019A-Epik_2021A organized by conversation 
+-[cleaned_patrols.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/cleaned_patrols.csv) - the sorted_new data set with the patrol data appended 
+-[evaluation_volunteer_text_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/evaluation_volunteer_text_1000.csv) - the random 1000 entries from sorted_new used to test each of our potential model options
+-[t5_emotion_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/t5_emotion_volunteer_1000.csv) - the output of t5 on the random 1000 entries used for testing
+-[goemotion_bert_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/goemotion_bert_volunteer_1000.csv) - the output of goemotion on the random 1000 entries used for testing
+-[twiter_roberta_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/twiter_roberta_volunteer_1000.csv) - the output of twitter rooberta on the random 1000 entries used for testing
+-[watson_labeled.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/watson_labeled.csv) - the output of watson nlu on the random 1000 entries used for testing
+-[labeled_data_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/labeled_data_1000.csv) - the cleaned and normalized version of justins responses of the random 1000 entries used for testing
+-[feedback_goemotion.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/feedback_goemotion.csv) - the raw and uncleaned version of justins responses of the random 1000 entries used for testing
+-[unique_messages.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/unique_messages.csv) - sorted_new with a column to identify if the text was from a script or not
+-[test.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/test.csv) - sample output of our script 
 
-Unfortunately, we are not able to provide the actual dataset. Instead, we've included a sample dataset below, along with the results from running it through our pipeline.
-
-## 9.1. Sample Dataset & Results
 
 # 10. Alternative Methods Tried
+All the links to these tools will be provided in [11.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
+The decision to used go_emotion also was influence by the comparisons between models in [compare_models.ipynb](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/compare_models.ipynb)
+
+## 10.1. Watson NLU 
+Watson NLU gave a rating value for each of the following emotions: joy, anger, sadness, fear, disgust, positive, negative, neutral. We decided not to use this tool for our final analysis for the following reasons: 
+-it required longer text strings then many of the messages we were working with 
+-less emotion coverage than goemotion 
+-less accurate from our preliminary
+## 10.2. NRCLex 
+NRCLex gave a rating value for each of the following emotions: joy, anger, sadness, fear, disgust, surprise, trust. We decided not to use this tool for our final analysis for the following reasons: 
+-it required longer text strings then many of the messages we were working with 
+-the frequency count made it confusing to use for analysis
+-less accurate from our preliminary
+## 10.3. Roberta 
+Roberta gave a rating value for each of the following emotions: joy, anger, sadness, optimism. We decided not to use this tool for our final analysis for the following reasons: 
+-it required longer text strings then many of the messages we were working with 
+-the frequency count made it confusing to use for analysis
+-less accurate from our preliminary
+## 10.4. T5
+T5 gave a rating value for each of the following emotions: joy, anger, sadness, fear, surprise, love, other. We decided not to use this tool for our final analysis for the following reasons: 
+-it required longer text strings then many of the messages we were working with 
+-the frequency count made it confusing to use for analysis
+-less accurate from our preliminary
 
 # 11. Extra Resources
 
 ## 11.1. EDA
 
-[Sentiment EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda_sentiment.ipynb)
+[eda](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
 
-[Volunteer Patrol Schedule EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/patrol_eda.ipynb)
+[Sentiment EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda_sentiment.ipynb) - Exploratory analysis of roberta on the sample data set and analyzing the differences between volunteer and buyer text. 
+
+[Volunteer Patrol Schedule EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/patrol_eda.ipynb)- duration of the patrols in relation to each other, the number and average duration(counted by number of texts exchanged) of conversations conducted by the patrols in relation to each other
+
+[Watson EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/watson_eda.ipynb) - Exploratory analysis of the functioning of watson nlu on the 1000 sample data set 
+
+[NRCLex EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/sentiment_analysis.ipynb) - Exploratory analysis of the functioning of NRCLex on the 1000 sample data set 
 
 ## 11.2. Sentiment Analysis Tools
 
