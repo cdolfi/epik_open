@@ -29,23 +29,9 @@
 
 # 2. Getting Started
 
-## 2.1. Installing Requirements
+## 2.1. Running the Code
 
-Before installing, if you can, make a python 3.7 virtual environment and activate it
-(for help see [official docs](https://docs.python.org/3/tutorial/venv.html)).
-Then you can run the following command to install all python requirements for the scripts.
-
-```
-pip install -r requirements.txt
-```
-
-If you have a GPU, you should follow the
-[official pytorch installation instructions](https://pytorch.org/get-started/locally/)
-and `pip install` each requirement individually.
-
-## 2.2. Running the Code
-
-### 2.2.1. Docker Instructions
+## 2.2. Docker Instructions
 
 We recommend running the following scripts and notebooks using Docker.
 First, open a terminal window and navigate to the project directory.
@@ -55,13 +41,13 @@ You can name the image whatever you like.
 Then you can run the image as a Docker container by executing `docker run -it <image-name> bash`.
 This will allow you to access the container in the interactive mode so you can run the scripts and notebooks by using the instructions above.
 
-### 2.2.2. Notebooks
+### 2.3. Notebooks
 
 In the `notebooks` folder, you can run the cells of the notebooks in jupyter notebook.
 Make sure `jupyter` is installed with `pip install jupyter`.
 To run jupyter, run `jupyter notebook` and follow the printed instruction to launch a browser window.
 
-### 2.2.3. Scripts
+### 2.4. Scripts
 
 We have some python scripts in this repository that can be run.
 First, you need to set your `PYTHONPATH` environment variable to this directory.
