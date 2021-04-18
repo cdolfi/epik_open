@@ -1,12 +1,10 @@
 # 1. Table Of Contents
 
 - [1. Table Of Contents](#1-table-of-contents)
-- [2. Getting Started](#2-getting-started)
-  - [2.1. Installing Requirements](#21-installing-requirements)
-  - [2.2. Running the Code](#22-running-code)
-    - [2.2.1. Docker Instructions](#221-docker)
-    - [2.2.2. Notebooks](#222-notebooks)
-    - [2.2.3. Scripts](#223-scripts)
+- [2. Getting Started - Running the Code](#2-getting-started)
+  - [2.1. Docker Instructions](#21-docker)
+  - [2.2. Notebooks](#22-notebooks)
+  - [2.3. Scripts](#23-scripts)
 - [3. Input File Requirements](#3-input-file-requirements)
 - [4. EPIK Project SMS Sentiment Analysis](#4-epik-project-sms-sentiment-analysis)
 - [5. Why is this tool needed](#5-why-is-this-tool-needed)
@@ -27,25 +25,9 @@
   - [11.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
   - [11.3. Presentations](#113-presentations)
 
-# 2. Getting Started
+# 2. Getting Started - Running the Code
 
-## 2.1. Installing Requirements
-
-Before installing, if you can, make a python 3.7 virtual environment and activate it
-(for help see [official docs](https://docs.python.org/3/tutorial/venv.html)).
-Then you can run the following command to install all python requirements for the scripts.
-
-```
-pip install -r requirements.txt
-```
-
-If you have a GPU, you should follow the
-[official pytorch installation instructions](https://pytorch.org/get-started/locally/)
-and `pip install` each requirement individually.
-
-## 2.2. Running the Code
-
-### 2.2.1. Docker Instructions
+## 2.1. Docker Instructions
 
 We recommend running the following scripts and notebooks using Docker.
 First, open a terminal window and navigate to the project directory.
@@ -55,13 +37,13 @@ You can name the image whatever you like.
 Then you can run the image as a Docker container by executing `docker run -it <image-name> bash`.
 This will allow you to access the container in the interactive mode so you can run the scripts and notebooks by using the instructions above.
 
-### 2.2.2. Notebooks
+## 2.2. Notebooks
 
 In the `notebooks` folder, you can run the cells of the notebooks in jupyter notebook.
 Make sure `jupyter` is installed with `pip install jupyter`.
 To run jupyter, run `jupyter notebook` and follow the printed instruction to launch a browser window.
 
-### 2.2.3. Scripts
+## 2.3. Scripts
 
 We have some python scripts in this repository that can be run.
 First, you need to set your `PYTHONPATH` environment variable to this directory.
@@ -132,9 +114,13 @@ Unfortunately, we are not able to provide the actual dataset. Instead, we've inc
 ## 11.2. Sentiment Analysis Tools
 
 [Watson NLU](https://cloud.ibm.com/apidocs/natural-language-understanding?code=python#analyze) - joy, anger, sadness, fear, disgust, positive, negative, neutral
+
 [NRCLex](https://pypi.org/project/NRCLex/) - joy, anger, sadness, fear, disgust, surprise, trust
+
 [Roberta](https://github.com/pytorch/fairseq/tree/master/examples/roberta) - joy, anger, sadness, optimism
+
 [T5](https://ai.googleblog.com/2020/02/exploring-transfer-learning-with-t5.html) - joy, anger, sadness, fear, surprise, love, other
+
 [GoEmotion Bert](https://github.com/google-research/google-research/tree/master/goemotions) - 28 classes
 
 ## 11.3. Presentations
