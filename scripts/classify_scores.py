@@ -1,6 +1,7 @@
 import argparse
 
 import pandas as pd
+from tqdm import tqdm
 
 import classifiers
 
@@ -36,7 +37,8 @@ def main():
     df = pd.read_csv(args.eval_data)
     clf = get_classifier(args)
     scores = []
-    for text in df['text']:
+    df.columns = df.columns.str.lower()
+    for text in tqdm(df['text']):
         scores.append(clf.classify_scores(text))
     df = pd.DataFrame(scores, columns=clf.labels)
     df.to_csv(args.save_path)
