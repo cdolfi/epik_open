@@ -2,11 +2,10 @@
 
 - [1. Table Of Contents](#1-table-of-contents)
 - [2. Getting Started](#2-getting-started)
-  - [2.1. Installing Requirements](#21-installing-requirements)
-  - [2.2. Running the Code](#22-running-code)
-    - [2.2.1. Docker Instructions](#221-docker)
-    - [2.2.2. Notebooks](#222-notebooks)
-    - [2.2.3. Scripts](#223-scripts)
+  - [2.1. Running the Code](#21-running-code)
+    - [2.1.1. Docker Instructions](#221-docker)
+    - [2.1.2. Notebooks](#222-notebooks)
+    - [2.1.3. Scripts](#223-scripts)
 - [3. Input File Requirements](#3-input-file-requirements)
 - [4. EPIK Project SMS Sentiment Analysis](#4-epik-project-sms-sentiment-analysis)
 - [5. Why is this tool needed](#5-why-is-this-tool-needed)
@@ -31,7 +30,7 @@
 
 ## 2.1. Running the Code
 
-## 2.2. Docker Instructions
+### 2.1.1. Docker Instructions
 
 We recommend running the following scripts and notebooks using Docker.
 First, open a terminal window and navigate to the project directory.
@@ -41,13 +40,13 @@ You can name the image whatever you like.
 Then you can run the image as a Docker container by executing `docker run -it <image-name> bash`.
 This will allow you to access the container in the interactive mode so you can run the scripts and notebooks by using the instructions above.
 
-### 2.3. Notebooks
+### 2.1.2. Notebooks
 
 In the `notebooks` folder, you can run the cells of the notebooks in jupyter notebook.
 Make sure `jupyter` is installed with `pip install jupyter`.
 To run jupyter, run `jupyter notebook` and follow the printed instruction to launch a browser window.
 
-### 2.4. Scripts
+### 2.1.3. Scripts
 
 We have some python scripts in this repository that can be run.
 First, you need to set your `PYTHONPATH` environment variable to this directory.
