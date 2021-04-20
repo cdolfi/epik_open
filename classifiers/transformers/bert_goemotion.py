@@ -118,8 +118,12 @@ class GoEmotionBertClassifier(EmotionClassifier):
         return np.argmax(self.classify_scores(text))
 
     def classify_scores(self, text):
-        outputs = self.goemotions([text])[0]
         scores = np.zeros(len(self._labels))
+        try:
+            outputs = self.goemotions([text])[0]
+        except RuntimeError:
+            # we get this error when text length is too long
+            return scores
         for i in range(len(outputs['labels'])):
             label = outputs['labels'][i]
             if label in self._labels:
