@@ -162,16 +162,17 @@ NRCLex gave a rating value for each of the following emotions: joy, anger, sadne
 
 Roberta gave a rating value for each of the following emotions: joy, anger, sadness, optimism. We decided not to use this tool for our final analysis for the following reasons:
 
-- it required longer text strings then many of the messages we were working with
-- the frequency count made it confusing to use for analysis
+- the classifications for emotion only covered a small subset of possible emotions
+- no neutral option
 - less accurate from our preliminary
 
 ## 10.4. T5
 
 T5 gave a rating value for each of the following emotions: joy, anger, sadness, fear, surprise, love, other. We decided not to use this tool for our final analysis for the following reasons:
 
-- it required longer text strings then many of the messages we were working with
-- the frequency count made it confusing to use for analysis
+- very biased for short texts
+- no neutral option
+- the classifications for emotion only covered a small subset of possible emotions
 - less accurate from our preliminary
 
 # 11. Extra Resources
