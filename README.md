@@ -35,7 +35,7 @@ From there, you need to build the Docker image by running `docker build -t <imag
 You can name the image whatever you like.
 
 Then you can run the image as a Docker container by executing `docker run -it -p 8888:8888 <image-name> bash`.
-This will allow you to access the container in the interactive mode so you can run the scripts and notebooks by using the instructions above.
+This will allow you to access the container in the interactive mode so you can run the scripts and notebooks by using the instructions below.
 
 ## 2.2. Notebooks
 
