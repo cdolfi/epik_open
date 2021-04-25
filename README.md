@@ -15,15 +15,16 @@
 - [8. The Pipeline](#8-pipeline)
   - [8.1. CSV Inputs, Outputs](#81-csv)
   - [8.2. Cleaning Data](#82-cleaning)
-  - [8.3. Pre-trained Models](#83-pretrained-models)
-  - [8.4. Analyzing/Categorizing Results](#84-analyzing-results)
+  - [8.3. Analyzing/Categorizing Results](#83-analyzing-results)
 - [9. Dataset and Sample Results](#9-dataset-and-sample-results)
   - [9.1. Sample Dataset & Results](#91-sample-dataset-results)
 - [10. Alternative Methods Tried](#10-alternative-methods-tried)
-- [11. Extra Resources](#11-extra-resources)
-  - [11.1. EDA](#111-eda)
-  - [11.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
-  - [11.3. Presentations](#113-presentations)
+- [Final Analysis](11-final-analysis)
+  - [11.1. Scripted Data](#111-scripted-data)
+- [12. Extra Resources](#11-extra-resources)
+  - [12.1. EDA](#111-eda)
+  - [12.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
+  - [12.3. Presentations](#113-presentations)
 
 # 2. Getting Started - Running the Code
 
@@ -102,7 +103,7 @@ From the calender data we received from Justin, we labeled each conversation thr
 
 Once we got the labeled data from Justin, we also cleaned the labels to be set up to go into our [models](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/labeled_data.ipynb). At this point we made each label consistent throughout in terms of spelling and capitalization.
 
-## 8.4. Analyzing/Categorizing Results
+## 8.3. Analyzing/Categorizing Results
 
 The first step of analyzing the data was to run the pre-trained sentiment analysis model on the newly cleaned data. GoEmotion Bert, our pre-trained model of choice, returned the emotions detected within each individual message (from the 27 emotions + neutral labelled options they offered).
 
@@ -175,9 +176,15 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 - the classifications for emotion only covered a small subset of possible emotions
 - less accurate from our preliminary
 
-# 11. Extra Resources
+# 11 Final Analysis 
 
-## 11.1. EDA
+## 11.1 Scripted Data 
+
+From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data points, 3203 are scripted. 
+
+# 12. Extra Resources
+
+## 12.1. EDA
 
 [Eda](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
 
@@ -189,7 +196,7 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 
 [NRCLex EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/sentiment_analysis.ipynb) - Exploratory analysis of the functioning of NRCLex on the 1000 sample data set
 
-## 11.2. Sentiment Analysis Tools
+## 12.2. Sentiment Analysis Tools
 
 [Watson NLU](https://cloud.ibm.com/apidocs/natural-language-understanding?code=python#analyze) - joy, anger, sadness, fear, disgust, positive, negative, neutral
 
@@ -201,6 +208,6 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 
 [GoEmotion Bert](https://github.com/google-research/google-research/tree/master/goemotions) - 28 classes
 
-## 11.3. Presentations
+## 12.3. Presentations
 
 [Midterm](https://docs.google.com/presentation/d/1bsh7GIwzoliqG5u5qOp3M0s78mT2d3Bi201Olb0s6VE/edit?usp=sharing)
