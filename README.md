@@ -20,10 +20,12 @@
 - [9. Dataset and Sample Results](#9-dataset-and-sample-results)
   - [9.1. Sample Dataset & Results](#91-sample-dataset-results)
 - [10. Alternative Methods Tried](#10-alternative-methods-tried)
-- [11. Extra Resources](#11-extra-resources)
-  - [11.1. EDA](#111-eda)
-  - [11.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
-  - [11.3. Presentations](#113-presentations)
+- [Final Analysis](11-final-analysis)
+  - [11.1. Scripted Data](#111-scripted-data)
+- [12. Extra Resources](#11-extra-resources)
+  - [12.1. EDA](#111-eda)
+  - [12.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
+  - [12.3. Presentations](#113-presentations)
 
 # 2. Getting Started - Running the Code
 
@@ -134,13 +136,13 @@ In our data folder, we have the following data sets avalible:
 
 - [unique_messages.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/unique_messages.csv) - sorted_new with a column to identify if the text was from a script or not
 
-- [test.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/test.csv) - sample output of our script
+-[test.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/test.csv) - sample output of our script
 
 # 10. Alternative Methods Tried
 
 All the links to these tools will be provided in [11.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
 
-The decision to use go_emotion also was influence by the comparisons between models in [compare_models.ipynb](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/compare_models.ipynb)
+The decision to used go_emotion also was influence by the comparisons between models in [compare_models.ipynb](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/compare_models.ipynb)
 
 ## 10.1. Watson NLU
 
@@ -175,11 +177,17 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 - the classifications for emotion only covered a small subset of possible emotions
 - less accurate from our preliminary
 
-# 11. Extra Resources
+# 11 Final Analysis 
 
-## 11.1. EDA
+## 11.1 Scripted Data 
 
-[EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
+From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data points, 3203 are scripted. 
+
+# 12. Extra Resources
+
+## 12.1. EDA
+
+[Eda](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
 
 [Sentiment EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda_sentiment.ipynb) - Exploratory analysis of roberta on the sample data set and analyzing the differences between volunteer and buyer text.
 
@@ -189,7 +197,7 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 
 [NRCLex EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/sentiment_analysis.ipynb) - Exploratory analysis of the functioning of NRCLex on the 1000 sample data set
 
-## 11.2. Sentiment Analysis Tools
+## 12.2. Sentiment Analysis Tools
 
 [Watson NLU](https://cloud.ibm.com/apidocs/natural-language-understanding?code=python#analyze) - joy, anger, sadness, fear, disgust, positive, negative, neutral
 
@@ -201,6 +209,6 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 
 [GoEmotion Bert](https://github.com/google-research/google-research/tree/master/goemotions) - 28 classes
 
-## 11.3. Presentations
+## 12.3. Presentations
 
 [Midterm](https://docs.google.com/presentation/d/1bsh7GIwzoliqG5u5qOp3M0s78mT2d3Bi201Olb0s6VE/edit?usp=sharing)
