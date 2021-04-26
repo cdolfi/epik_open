@@ -191,8 +191,11 @@ From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data
 Descriptions for all the graphs in the graphs folder:
 
 freq_preds.jpg: the frequency for each emotion label
+
 mean_preds.jpg: the mean score for each emotion label
+
 occurs_preds.jpg: since instances can be assigned multiple emotions, this plot shows the total number of predicted emotions for each number of occurences
+
 total_preds.jpg: the frequency of each emotion label that was assigned to one message. 
 
 # 12. Extra Resources
