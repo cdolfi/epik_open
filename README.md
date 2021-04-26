@@ -1,30 +1,34 @@
 # 1. Table Of Contents
 
 - [1. Table Of Contents](#1-table-of-contents)
-- [2. Getting Started - Running the Code](#2-getting-started)
-  - [2.1. Docker Instructions](#21-docker)
+- [2. Getting Started - Running the Code](#2-getting-started---running-the-code)
+  - [2.1. Docker Instructions](#21-docker-instructions)
   - [2.2. Notebooks](#22-notebooks)
   - [2.3. Scripts](#23-scripts)
 - [3. Input File Requirements](#3-input-file-requirements)
 - [4. EPIK Project SMS Sentiment Analysis](#4-epik-project-sms-sentiment-analysis)
-- [5. Why is this tool needed](#5-why-is-this-tool-needed)
-- [6. End goal of this tool](#6-end-goal-of-this-tool)
+- [5. Why this tool is needed](#5-why-this-tool-is-needed)
+- [6. Project Scope](#6-project-scope)
   - [6.1. Current State](#61-current-state)
-  - [6.2. Next Steps](#62-next-steps)
+  - [6.2. Future](#62-future)
 - [7. Big Overview of Tool](#7-big-overview-of-tool)
-- [8. The Pipeline](#8-pipeline)
-  - [8.1. CSV Inputs, Outputs](#81-csv)
-  - [8.2. Cleaning Data](#82-cleaning)
-  - [8.3. Analyzing/Categorizing Results](#83-analyzing-results)
+- [8. The Pipeline](#8-the-pipeline)
+  - [8.1. CSV Inputs, Outputs](#81-csv-inputs-outputs)
+  - [8.2. Cleaning Data](#82-cleaning-data)
+  - [8.3. Analyzing/Categorizing Results](#83-analyzingcategorizing-results)
 - [9. Dataset and Sample Results](#9-dataset-and-sample-results)
-  - [9.1. Sample Dataset & Results](#91-sample-dataset-results)
 - [10. Alternative Methods Tried](#10-alternative-methods-tried)
-- [Final Analysis](11-final-analysis)
-  - [11.1. Scripted Data](#111-scripted-data)
-- [12. Extra Resources](#11-extra-resources)
-  - [12.1. EDA](#111-eda)
-  - [12.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
-  - [12.3. Presentations](#113-presentations)
+  - [10.1. Watson NLU](#101-watson-nlu)
+  - [10.2. NRCLex](#102-nrclex)
+  - [10.3. Roberta](#103-roberta)
+  - [10.4. T5](#104-t5)
+- [11 Final Analysis](#11-final-analysis)
+  - [11.1 Scripted Data](#111-scripted-data)
+  - [11.2 Graphs](#112-graphs)
+- [12. Extra Resources](#12-extra-resources)
+  - [12.1. EDA](#121-eda)
+  - [12.2. Sentiment Analysis Tools](#122-sentiment-analysis-tools)
+  - [12.3. Presentations](#123-presentations)
 
 # 2. Getting Started - Running the Code
 
@@ -181,6 +185,15 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 ## 11.1 Scripted Data 
 
 From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data points, 3203 are scripted. 
+
+## 11.2 Graphs
+
+Descriptions for all the graphs in the graphs folder:
+
+freq_preds.jpg: the frequency for each emotion label
+mean_preds.jpg: the mean score for each emotion label
+occurs_preds.jpg: since instances can be assigned multiple emotions, this plot shows the total number of predicted emotions for each number of occurences
+total_preds.jpg: the frequency of each emotion label that was assigned to one message. 
 
 # 12. Extra Resources
 
