@@ -191,13 +191,13 @@ From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data
 
 Descriptions for all the graphs in the graphs folder:
 
-freq_preds.jpg: a large majority of instances are classified as "neutral" followed by "curiosity"
+freq_preds.jpg: a large majority of instances are classified as "neutral" followed by "curiosity".
 
-mean_preds.jpg: almost all emotion labels have mean scores greater than 0.= with many greater than 0.7
+mean_preds.jpg: almost all emotion labels have mean scores greater than 0.4 with many greater than 0.7.
 
-occurs_preds.jpg: a large majority of instances are assigned one label
+occurs_preds.jpg: a large majority of instances are assigned one label.
 
-total_preds.jpg: from the instances that are assigned one label, a majority of them are "neutral"
+total_preds.jpg: from the instances that are assigned one label, a majority of them are "neutral".
 
 ## 11.3 Results Analysis
 
