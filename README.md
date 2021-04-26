@@ -25,6 +25,7 @@
 - [11 Final Analysis](#11-final-analysis)
   - [11.1 Scripted Data](#111-scripted-data)
   - [11.2 Graphs](#112-graphs)
+  - [11.3 Results Analysis](#113-results-analysis)
 - [12. Extra Resources](#12-extra-resources)
   - [12.1. EDA](#121-eda)
   - [12.2. Sentiment Analysis Tools](#122-sentiment-analysis-tools)
@@ -190,13 +191,15 @@ From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data
 
 Descriptions for all the graphs in the graphs folder:
 
-freq_preds.jpg: the frequency for each emotion label
+freq_preds.jpg: a large majority of instances are classified as "neutral" followed by "curiosity"
 
-mean_preds.jpg: the mean score for each emotion label
+mean_preds.jpg: almost all emotion labels have mean scores greater than 0.= with many greater than 0.7
 
-occurs_preds.jpg: since instances can be assigned multiple emotions, this plot shows the total number of predicted emotions for each number of occurences
+occurs_preds.jpg: a large majority of instances are assigned one label
 
-total_preds.jpg: the frequency of each emotion label that was assigned to one message. 
+total_preds.jpg: from the instances that are assigned one label, a majority of them are "neutral"
+
+## 11.3 Results Analysis
 
 # 12. Extra Resources
 
