@@ -13,9 +13,8 @@
   - [6.2. Future](#62-future)
 - [7. Big Overview of Tool](#7-big-overview-of-tool)
 - [8. The Pipeline](#8-the-pipeline)
-  - [8.1. CSV Inputs, Outputs](#81-csv-inputs-outputs)
-  - [8.2. Cleaning Data](#82-cleaning-data)
-  - [8.3. Analyzing/Categorizing Results](#83-analyzingcategorizing-results)
+  - [8.1. Cleaning Data](#81-cleaning-data)
+  - [8.2. Analyzing/Categorizing Results](#82-analyzingcategorizing-results)
 - [9. Dataset and Sample Results](#9-dataset-and-sample-results)
 - [10. Alternative Methods Tried](#10-alternative-methods-tried)
   - [10.1. Watson NLU](#101-watson-nlu)
@@ -94,12 +93,7 @@ The final output of our project will be the following: a script that will give a
 
 # 8. The Pipeline
 
-## 8.1. CSV Inputs, Outputs
-
-Input requirements to the script are as followed:
-CSV file with a column for text labeled "text"
-
-## 8.2. Cleaning Data
+## 8.1. Cleaning Data
 
 The data was cleaned at multiple different points. First the data was [Cleaned](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/cleaning.ipynb)
 to organize the entire data set by conversation. From there, each conversation is in chronological order of when the messages where sent. After this, all of the null text messages where removed from the dataset as well.
@@ -108,7 +102,7 @@ From the calender data we received from Justin, we labeled each conversation thr
 
 Once we got the labeled data from Justin, we also cleaned the labels to be set up to go into our [models](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/labeled_data.ipynb). At this point we made each label consistent throughout in terms of spelling and capitalization.
 
-## 8.3. Analyzing/Categorizing Results
+## 8.2. Analyzing/Categorizing Results
 
 The first step of analyzing the data was to run the pre-trained sentiment analysis model on the newly cleaned data. GoEmotion Bert, our pre-trained model of choice, returned the emotions detected within each individual message (from the 27 emotions + neutral labelled options they offered).
 
@@ -183,7 +177,7 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 
 # 11 Final Analysis 
 
-## 11.1 Scripted Data 
+## 11.1 Data Overview
 
 From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data points, 3203 are scripted. 
 
