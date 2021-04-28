@@ -22,7 +22,7 @@
   - [10.3. Roberta](#103-roberta)
   - [10.4. T5](#104-t5)
 - [11 Final Analysis](#11-final-analysis)
-  - [11.1 Scripted Data](#111-scripted-data)
+  - [11.1 Scripted Data](#111-data-overview)
   - [11.2 Graphs](#112-graphs)
   - [11.3 Results Analysis](#113-results-analysis)
 - [12. Extra Resources](#12-extra-resources)
@@ -120,25 +120,25 @@ In our data folder, we have the following data sets avalible:
 
 - [evaluation_volunteer_text_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/evaluation_volunteer_text_1000.csv) - the random 1000 entries from sorted_new used to test each of our potential model options
 
-- [t5_emotion_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/t5_emotion_volunteer_1000.csv) - the output of t5 on the random 1000 entries used for testing
+- [t5_emotion_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/t5_emotion_volunteer_1000.csv) - the output of T5 on the random 1000 entries used for testing
 
 - [goemotion_bert_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/goemotion_bert_volunteer_1000.csv) - the output of goemotion on the random 1000 entries used for testing
 
-- [twiter_roberta_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/twiter_roberta_volunteer_1000.csv) - the output of twitter rooberta on the random 1000 entries used for testing
+- [twiter_roberta_volunteer_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/twiter_roberta_volunteer_1000.csv) - the output of Twitter Roberta on the random 1000 entries used for testing
 
-- [watson_labeled.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/watson_labeled.csv) - the output of watson nlu on the random 1000 entries used for testing
+- [watson_labeled.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/watson_labeled.csv) - the output of Watson NLU on the random 1000 entries used for testing
 
-- [labeled_data_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/labeled_data_1000.csv) - the cleaned and normalized version of justins responses of the random 1000 entries used for testing
+- [labeled_data_1000.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/labeled_data_1000.csv) - the cleaned and normalized version of Justin's responses of the random 1000 entries used for testing
 
-- [feedback_goemotion.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/feedback_goemotion.csv) - the raw and uncleaned version of justins responses of the random 1000 entries used for testing
+- [feedback_goemotion.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/feedback_goemotion.csv) - the raw and uncleaned version of Justin's responses of the random 1000 entries used for testing
 
 - [unique_messages.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/unique_messages.csv) - sorted_new with a column to identify if the text was from a script or not
 
--[test.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/test.csv) - sample output of our script
+- [test.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/test.csv) - sample output of our script
 
 # 10. Alternative Methods Tried
 
-All the links to these tools will be provided in [11.2. Sentiment Analysis Tools](#112-sentiment-analysis-tools)
+All the links to these tools will be provided in [12.2. Sentiment Analysis Tools](#122-sentiment-analysis-tools)
 
 The decision to used go_emotion also was influence by the comparisons between models in [compare_models.ipynb](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/compare_models.ipynb)
 
@@ -181,10 +181,10 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 
 From the set of 154,990 messages:
 
-- 69417 volunteer data points
-- 84573 buyer data points
-- 3203 are scripted
-- 29082 different conversations
+- 69,417 volunteer data points
+- 84,573 buyer data points
+- 3,203 are scripted
+- 29,082 different conversations
 
 ## 11.2 Graphs
 
@@ -226,13 +226,12 @@ Descriptions for all the graphs in the graphs folder:
 
 ## 11.3 Results Analysis
 
-The scripted language is detected overwhelmingly higher on anger. This provides a stronger arguement towards getting away from that language. 
-Overall when an emotion was labeled, a strong majority of the time it was the only one labeled and had high confidence >.7. 
-The volunteers displayed a much higher degree of curiousity than the buyers. 
-Kansas City, Anchorage, Arizonia, Detroit, and Portland account for ~75% of messages. 
-San Antonio and Ancorchorage are the only patrols with anger in top 5. 
-All locations have the same emotionals for the top 3 except Houston(their #4 is everyone elses #3).
-
+The scripted language is detected overwhelmingly higher on anger. This provides a stronger arguement towards getting away from that language.
+Overall when an emotion was labeled, a strong majority of the time it was the only one labeled and had high confidence >.7.
+The volunteers displayed a much higher degree of curiousity than the buyers.
+Kansas City, Anchorage, Arizonia, Detroit, and Portland account for ~75% of messages.
+San Antonio and Ancorchorage are the only patrols with anger in top 5.
+All locations have the same emotional labels for the top 3 except Houston(their #4 is everyone elses #3).
 
 # 12. Extra Resources
 
@@ -242,15 +241,15 @@ All locations have the same emotionals for the top 3 except Houston(their #4 is 
 
 [patrol_activity.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/patrol_activity.jpg): the Portland Patrol sent the most messages, followed by the Detroit Patrol then the Arizona Patrol.
 
-[Eda](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
+[Volunteer Patrol Schedule EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/patrol_eda.ipynb): duration of the patrols in relation to each other, the number and average duration(counted by number of texts exchanged) of conversations conducted by the patrols in relation to each other.
 
-[Sentiment EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda_sentiment.ipynb) - Exploratory analysis of roberta on the sample data set and analyzing the differences between volunteer and buyer text.
+[EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb): general eda of the inital data given to us
 
-[Volunteer Patrol Schedule EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/patrol_eda.ipynb)- duration of the patrols in relation to each other, the number and average duration(counted by number of texts exchanged) of conversations conducted by the patrols in relation to each other
+[Sentiment EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda_sentiment.ipynb): Exploratory analysis of Roberta on the sample data set and analyzing the differences between volunteer and buyer text.
 
-[Watson EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/watson_eda.ipynb) - Exploratory analysis of the functioning of watson nlu on the 1000 sample data set
+[Watson EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/watson_eda.ipynb): Exploratory analysis of the functioning of Watson NLU on the 1000 sample data set
 
-[NRCLex EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/sentiment_analysis.ipynb) - Exploratory analysis of the functioning of NRCLex on the 1000 sample data set
+[NRCLex EDA](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/sentiment_analysis.ipynb): Exploratory analysis of the functioning of NRCLex on the 1000 sample data set
 
 ## 12.2. Sentiment Analysis Tools
 
@@ -267,3 +266,5 @@ All locations have the same emotionals for the top 3 except Houston(their #4 is 
 ## 12.3. Presentations
 
 [Midterm](https://docs.google.com/presentation/d/1bsh7GIwzoliqG5u5qOp3M0s78mT2d3Bi201Olb0s6VE/edit?usp=sharing)
+
+[Final](https://docs.google.com/presentation/d/1C67zqwiaVUveLbsmvFHEY0bG0NED_JZ4-AfquZnzqj4/edit#slide=id.gd518f7a43a_0_5)
