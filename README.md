@@ -185,37 +185,37 @@ From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data
 
 Descriptions for all the graphs in the graphs folder:
 
-freq_preds.jpg: a large majority of instances are classified as "neutral" followed by "curiosity".
+[freq_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/freq_preds.jpg): a large majority of instances are classified as "neutral" followed by "curiosity".
 
-mean_preds.jpg: almost all emotion labels have mean scores greater than 0.4 with many greater than 0.7.
+[mean_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/mean_preds.jpg): almost all emotion labels have mean scores greater than 0.4 with many greater than 0.7.
 
-occurs_preds.jpg: a large majority of instances are assigned one label.
+[occurs_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/occurs_preds.jpg): a large majority of instances are assigned one label.
 
-total_preds.jpg: from the instances that are assigned one label, a majority of them are "neutral".
+[total_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/total_preds.jpg): from the instances that are assigned one label, a majority of them are "neutral".
 
-buyer_freq_preds.jpg: examining the buyer side of the conversations, a large majority of instances are classified as "neutral" followed by "curiosity".
+[buyer_freq_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/buyer_freq_preds.jpg): examining the buyer side of the conversations, a large majority of instances are classified as "neutral" followed by "curiosity".
 
-buyer_mean_preds.jpg: examining the buyer side of the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.6.
+[buyer_mean_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/buyer_mean_preds.jpg): examining the buyer side of the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.6.
 
-buyer_total_preds.jpg: examining the buyer side of the conversations, the majority were assigned only one emotion label.
+[buyer_total_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/buyer_total_preds.jpg): examining the buyer side of the conversations, the majority were assigned only one emotion label.
 
-volunteer_freq_preds.jpg: examining the volunteer side of the conversations, a large majority of instances are classified as "neutral" followed by "curiosity".
+[volunteer_freq_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/volunteer_freq_preds.jpg): examining the volunteer side of the conversations, a large majority of instances are classified as "neutral" followed by "curiosity".
 
-volunteer_mean_preds.jpg: examining the volunteer side of the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.6.
+[volunteer_mean_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/volunteer_mean_preds.jpg): examining the volunteer side of the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.6.
 
-volunteer_total_preds.jpg: examining the volunteer side of the conversations, the majority were assigned only one emotion label.
+[volunteer_total_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/volunteer_total_preds.jpg): examining the volunteer side of the conversations, the majority were assigned only one emotion label.
 
-script_freq_preds.jpg: examining the scripted messages in the conversations, they showed the least variety in emotion, with a large majority of instances classified as "angry" followed by "curiosity" then "neutral".
+[script_freq_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/script_freq_preds.jpg): examining the scripted messages in the conversations, they showed the least variety in emotion, with a large majority of instances classified as "angry" followed by "curiosity" then "neutral".
 
-script_mean_preds.jpg: examining the scripted messages in the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.6.
+[script_mean_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/script_mean_preds.jpg): examining the scripted messages in the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.6.
 
-script_total_preds.jpg: examining the scripted messages in the conversations, the majority were assigned only one emotion label.
+[script_total_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/script_total_preds.jpg): examining the scripted messages in the conversations, the majority were assigned only one emotion label.
 
-unique_freq_preds.jpg: examining the unique, unscripted messages in the conversations, a large majority of instances are classified as "neutral" followed by "curiosity".
+[unique_freq_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/unique_freq_preds.jpg): examining the unique, unscripted messages in the conversations, a large majority of instances are classified as "neutral" followed by "curiosity".
 
-unique_mean_preds.jpg: examining the unique, unscripted messages in the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.7.
+[unique_mean_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/unique_mean_preds.jpg): examining the unique, unscripted messages in the conversations, almost all emotion labels have mean scores greater than 0.4 with many greater than 0.7.
 
-unique_total_preds.jpg: examining the unique, unscripted messages in the conversations, the majority were assigned only one emotion label.
+[unique_total_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/unique_total_preds.jpg): examining the unique, unscripted messages in the conversations, the majority were assigned only one emotion label.
 
 ## 11.3 Results Analysis
 
