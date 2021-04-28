@@ -179,7 +179,11 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 
 ## 11.1 Data Overview
 
-From the set of 154,990 messages, INSERT NUMBER HERE of which are volunteer data points, 3203 are scripted.
+From the set of 154,990 messages:
+- 69417 volunteer data points
+- 84573 buyer data points
+- 3203 are scripted 
+- 29082 different conversations
 
 ## 11.2 Graphs
 
