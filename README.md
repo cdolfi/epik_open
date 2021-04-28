@@ -226,6 +226,14 @@ Descriptions for all the graphs in the graphs folder:
 
 ## 11.3 Results Analysis
 
+The scripted language is detected overwhelmingly higher on anger. This provides a stronger arguement towards getting away from that language. 
+Overall when an emotion was labeled, a strong majority of the time it was the only one labeled and had high confidence >.7. 
+The volunteers displayed a much higher degree of curiousity than the buyers. 
+Kansas City, Anchorage, Arizonia, Detroit, and Portland account for ~75% of messages. 
+San Antonio and Ancorchorage are the only patrols with anger in top 5. 
+All locations have the same emotionals for the top 3 except Houston(their #4 is everyone elses #3).
+
+
 # 12. Extra Resources
 
 ## 12.1. EDA
