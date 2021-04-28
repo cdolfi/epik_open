@@ -180,9 +180,10 @@ T5 gave a rating value for each of the following emotions: joy, anger, sadness, 
 ## 11.1 Data Overview
 
 From the set of 154,990 messages:
+
 - 69417 volunteer data points
 - 84573 buyer data points
-- 3203 are scripted 
+- 3203 are scripted
 - 29082 different conversations
 
 ## 11.2 Graphs
@@ -221,11 +222,25 @@ Descriptions for all the graphs in the graphs folder:
 
 [unique_total_preds.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/unique_total_preds.jpg): examining the unique, unscripted messages in the conversations, the majority were assigned only one emotion label.
 
+[city analysis](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/patrol_analysis.ipynb): see here for the graphs detailing the frequency of emotion labels, the mean score of emotion labels, and most common number of emotion labels for each city patrol.
+
 ## 11.3 Results Analysis
+
+The scripted language is detected overwhelmingly higher on anger. This provides a stronger arguement towards getting away from that language. 
+Overall when an emotion was labeled, a strong majority of the time it was the only one labeled and had high confidence >.7. 
+The volunteers displayed a much higher degree of curiousity than the buyers. 
+Kansas City, Anchorage, Arizonia, Detroit, and Portland account for ~75% of messages. 
+San Antonio and Ancorchorage are the only patrols with anger in top 5. 
+All locations have the same emotionals for the top 3 except Houston(their #4 is everyone elses #3).
+
 
 # 12. Extra Resources
 
 ## 12.1. EDA
+
+[monthly_scripted.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/monthly_scripted.jpg): the use of scripted messages decreased in 2021 to be around a quater of its use in 2019.
+
+[patrol_activity.jpg](https://github.com/realmanisingh/epik-project-nlp/blob/main/graphs/patrol_activity.jpg): the Portland Patrol sent the most messages, followed by the Detroit Patrol then the Arizona Patrol.
 
 [Eda](https://github.com/realmanisingh/epik-project-nlp/blob/main/notebooks/eda.ipynb)- general eda of the inital data given to us
 
