@@ -244,7 +244,7 @@ Kansas City, Anchorage, Arizonia, Detroit, and Portland account for ~75% of mess
 San Antonio and Ancorchorage are the only patrols with anger in top 5.
 All locations have the same emotional labels for the top 3 except Houston(their #4 is everyone elses #3).
 
-The "neutral" emotion is the most assigned label. This is a positive outcome since we do not want volunteers to have neutral conversations.
+The "neutral" emotion is the most assigned label overall. This is a positive outcome since we do not want volunteers to have neutral conversations.
 Positive emotions have a higher probability on average than negative emotions. This along with "neutral" being the most predicted label gives support for
 the idea that volunteers are having neutral conversations with buyers.
 While instances can be labeled with more than one emotion, a majority of instances were only labeled with one emotion. Upon further analysis, we found that a 
