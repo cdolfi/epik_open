@@ -11,6 +11,7 @@
 - [6. Project Scope](#6-project-scope)
   - [6.1. Current State](#61-current-state)
   - [6.2. Future](#62-future)
+  - [6.3. Limitations](#63-limitations)
 - [7. Big Overview of Tool](#7-big-overview-of-tool)
 - [8. The Pipeline](#8-the-pipeline)
   - [8.1. Cleaning Data](#81-cleaning-data)
