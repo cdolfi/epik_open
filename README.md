@@ -65,7 +65,8 @@ python scripts/classify_scores.py --model=goemotion-bert --task=emotion --eval-d
 # 3. Input File Requirements
 
 Input requirements to the script are as followed:
-CSV file with a column for text labeled "text"
+CSV file with a column for text labeled "text". 
+If a text string exceeds the maximum length the model can handle, it will predict zero values. 
 
 # 4. EPIK Project SMS Sentiment Analysis
 
@@ -85,11 +86,20 @@ This tool currently relies on pre-trained models to provide the sentiment analys
 
 ## 6.2. Future
 
-Future partners with EPIK could springboard off the work done in this project and build a ML classifier specific to EPIK's needs. While the pre-trained models provided a wide range of emotional analysis, they can be very general. Building an ML classfier from scratch would allow for a more tailored analysis fitted to EPIK's four emotional disposition quadrents and other organization specific terms. They may also want to take advantage of the stipends provided by Spark! in helping to build this ML classifier and in obtaining labelled data fitted to EPIK's needs.
+Future partners with EPIK could springboard off the work done in this project and build an ML classifier specific to EPIK's needs. While the pre-trained models provided a wide range of emotional analysis, they can be very general. Building an ML classfier from scratch would allow for a more tailored analysis fitted to EPIK's four emotional disposition quadrents and other organization specific terms. They may also want to take advantage of the stipends provided by Spark! in helping to build this ML classifier and in obtaining labelled data fitted to EPIK's needs.
+
+## 6.3. Limitations
+The current model can predict whether a given text message displays at least one of 28 different fine-grained emotions.
+However, there is still a gap in how these emotions can measure the performance volunteers in achieving EPIK's overall goal.
+One proposed approach was to measure whether accountability could be predicted from the emotions predicted.
+This, however, did not work as the context needed to predict accountability is lost in the emotion scores.
+Therefore, one could consider using transfer learning on the GoEmotion Bert model to predict accountability directly from text.
+But in order to successfully do so, one would need much more labels than the 500 we collected and higher quality labels with more labelers and structured procedures. 
+So considering the large scale effort needed to implement this labeling procedure, we leave this to future work. 
 
 # 7. Big Overview of Tool
 
-The final output of our project will be the following: a script that will give an emotional rating of the emotions for go_emotion and rating of accountability from the labeled data from Justin. This tool will be used to compare ratings between scripted vs. unscripted, conversations (breaking down by volunteer and buyer as well), and by patrol unit.
+The final output of our project will be the following: a script that will predict a fine-grained emotion score for each text in the EPIK Dataset based on the 28 classes present in the [GoEmotion Dataset](https://arxiv.org/abs/2005.00547). This tool will be used to compare ratings between scripted vs. unscripted, conversations (breaking down by volunteer and buyer as well), and by patrol unit.
 
 # 8. The Pipeline
 
@@ -108,11 +118,11 @@ The first step of analyzing the data was to run the pre-trained sentiment analys
 
 From the sentiment analysis, we then worked with Justin to add the label for "accountability", by working through a sample of 1000 rows of data to relabel texts Justin felt fulfilled the label "accountability'.
 
-Finally, we went through the resulting data and analyzed the general sentiment of convesations as a whole, for the volunteer side of conversations, and for the buyer side of conversations.
+Finally, we went through the resulting data and analyzed the general sentiment of conversations as a whole, for the volunteer side of conversations, and for the buyer side of conversations.
 
 # 9. Dataset and Sample Results
 
-In our data folder, we have the following data sets avalible:
+In our data folder, we have the following data sets available:
 
 - [sorted_new.csv](https://github.com/realmanisingh/epik-project-nlp/blob/main/data/sorted_new.csv) - Dataset with all entries from Epik_2019A-Epik_2021A organized by conversation
 
